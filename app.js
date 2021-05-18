@@ -13,13 +13,13 @@
 
 // This functions should check the integrity of the parameters and pass true/false
 function checkParamsFn(year, month, day) {
-  // Write your code here
+  return (
+    Number.isInteger(year) && Number.isInteger(month) && Number.isInteger(day)
+  );
 }
 
 // This functions should check if the person is or above 18 years of age, return true/false
-function checkOverEighteenFn(year, month, day) {
-  // Write your code here
-}
+function checkOverEighteenFn(year, month, day) {}
 
 // This is an anonymous function. It looks like a variable but it's not.
 // Also look at the naming of the function. it looks like salwaBaqer, where
@@ -29,8 +29,11 @@ function checkOverEighteenFn(year, month, day) {
 // str = String, int = Integer, arr = Array, obj = Object, fn = Function
 // It's best practice to name your function as to what it does, or your variable
 // to what it holds.
-function calculateAgeFn(year, month, day) {
-  // Write your code here
-}
+
+const calculateAgeFn = (year, month, day) => {
+  if (!checkParamsFn(year, month, day)) {
+    return "error: invalid input";
+  }
+};
 
 module.exports = calculateAgeFn;
